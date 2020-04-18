@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyProject.dbo.custumer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="custumer">
+    <Key>
+      <PropertyRef Name="email" />
+      <PropertyRef Name="fname" />
+      <PropertyRef Name="lname" />
+      <PropertyRef Name="phone" />
+    </Key>
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyProject.dbo.order' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="oid" />
+      <PropertyRef Name="pid" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="qunt" />
+      <PropertyRef Name="date" />
+    </Key>
+    <Property Name="oid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="qunt" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyProject.dbo.product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="pid" />
+      <PropertyRef Name="pname" />
+      <PropertyRef Name="price" />
+    </Key>
+    <Property Name="pid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyProject.dbo.user' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="email" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MyProjectModelStoreContainer">
+    <EntitySet Name="custumer" EntityType="Self.custumer" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [custumer].[email] AS [email], 
+    [custumer].[fname] AS [fname], 
+    [custumer].[lname] AS [lname], 
+    [custumer].[phone] AS [phone]
+    FROM [dbo].[custumer] AS [custumer]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="order" EntityType="Self.order" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [order].[oid] AS [oid], 
+    [order].[pid] AS [pid], 
+    [order].[email] AS [email], 
+    [order].[qunt] AS [qunt], 
+    [order].[date] AS [date]
+    FROM [dbo].[order] AS [order]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="product" EntityType="Self.product" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [product].[pid] AS [pid], 
+    [product].[pname] AS [pname], 
+    [product].[price] AS [price]
+    FROM [dbo].[product] AS [product]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="user" EntityType="Self.user" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [user].[email] AS [email], 
+    [user].[password] AS [password], 
+    [user].[type] AS [type]
+    FROM [dbo].[user] AS [user]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
