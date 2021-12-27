@@ -1,8 +1,10 @@
 # Online-guitar-shop
-login
+## login
   Entr email and password
-regster
+## regster
+```
   Entr email and create password
 shows all the items you can buy
 choose an item (guitar)
 payment and shipping
+```
